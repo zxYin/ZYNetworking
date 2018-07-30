@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.7.0)
+  - CTMediator (18)
+  - SwiftyJSON (4.0.0)
+  - UMengAnalytics-NO-IDFA (4.2.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - CTMediator
+  - SwiftyJSON (~> 4.0)
+  - UMengAnalytics-NO-IDFA (~> 4.2.5)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CTMediator
+    - SwiftyJSON
+    - UMengAnalytics-NO-IDFA
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  CTMediator: 420e9d90f9f1fd740caf2238ed7ed64dc621c5b7
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
+
+PODFILE CHECKSUM: 5c17c1741687222f0533463d6cf7124c7e0906b8
+
+COCOAPODS: 1.5.3

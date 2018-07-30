@@ -1,0 +1,9 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'ZYNetworking' do
+   pod 'Alamofire', '~> 4.7'
+   pod 'SwiftyJSON', '~> 4.0'
+   pod 'CTMediator'
+   pod 'UMengAnalytics-NO-IDFA', '~> 4.2.5'
+end
