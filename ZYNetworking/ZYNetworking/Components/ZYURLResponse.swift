@@ -21,7 +21,7 @@ public class ZYURLResponse: NSObject {
     private(set) var contentString: String?
     private(set) var content: Any?
     private(set) var requestId: Int
-    private(set) var request: URLRequest?
+    private(set) var request: NSURLRequest?
     private(set) var responseData: Data?
     
     private(set) var errorMessage: String?
@@ -32,7 +32,7 @@ public class ZYURLResponse: NSObject {
     
     private(set) var isCache: Bool
     
-    init(responseString: String?, requestId: Int, request: URLRequest?, responseContent: Dictionary<String, Any>?, error: NSError?) {
+    init(responseString: String?, requestId: Int, request: NSURLRequest?, responseContent: Dictionary<String, Any>?, error: NSError?) {
         
         self.requestId = requestId
         self.request = request

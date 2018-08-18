@@ -11,7 +11,7 @@ import CTMediator
 
 class ZYLogger: NSObject {
 
-    class public func logDebugInfo(withRequest request: URLRequest, apiName: String, service: ZYServiceProtocol) -> String {
+    class public func logDebugInfo(withRequest request: NSURLRequest, apiName: String, service: ZYServiceProtocol) -> String {
         
         var logString: String = ""
 #if DEBUG
@@ -39,14 +39,14 @@ class ZYLogger: NSObject {
         logString += "Service:\t\t" + String(describing: type(of: service)) + "\n"
         logString += "Status:\t\t\t" + environmentString + "\n"
         
-        logString.appendURLRequest(request: request)
+        logString.appendNSURLRequest(request: request)
         logString += "\n\n-------------------------   Request End   -------------------------\n\n\n"
         print(logString)
 #endif
         return logString
     }
     
-    class public func logDebugInfo(withResponse response: HTTPURLResponse?, rawResponseData: Data?, responseString: String?, request: URLRequest, error: NSError?) -> String {
+    class public func logDebugInfo(withResponse response: HTTPURLResponse?, rawResponseData: Data?, responseString: String?, request: NSURLRequest, error: NSError?) -> String {
         
         var logString: String = ""
 #if DEBUG
@@ -82,7 +82,7 @@ class ZYLogger: NSObject {
         }
         
         logString += "\n------------------------  Related Request Content  ------------------------\n"
-        logString.appendURLRequest(request: request)
+        logString.appendNSURLRequest(request: request)
         logString += "\n\n-------------------------   Response End   -------------------------\n\n\n"
         print(logString)
 #endif

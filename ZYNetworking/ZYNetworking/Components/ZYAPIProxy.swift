@@ -36,11 +36,11 @@ class ZYAPIProxy: NSObject {
         return manager
     }()
     
-    public func callAPI(withRequest request: URLRequest, success: ZYCallBack?, fail: ZYCallBack?) -> Int {
+    public func callAPI(withRequest request: NSURLRequest, success: ZYCallBack?, fail: ZYCallBack?) -> Int {
         
         var dataTask: URLSessionDataTask? = nil
         
-        dataTask = sessionManager.session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
+        dataTask = sessionManager.session.dataTask(with: request as URLRequest, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
             
             guard let dataTask = dataTask else { return }
             

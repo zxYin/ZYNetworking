@@ -157,7 +157,7 @@ extension ZYBaseAPIManager {
                         
                         let service: ZYServiceProtocol = ZYServiceFactory.sharedInstance.service(withIdentifier: child.serviceIdentifier)
         
-                        if var request: URLRequest = service.requestWithParams(params: reformedParams, path: child.path, requestType: child.method) {
+                        if var request: NSURLRequest = service.requestWithParams(params: reformedParams, path: child.path, requestType: child.method) {
                             
                             request.originRequestParams = params
                             request.actualRequestParams = reformedParams

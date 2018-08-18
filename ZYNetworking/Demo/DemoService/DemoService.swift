@@ -39,27 +39,29 @@ extension DemoService: ZYServiceProtocol {
         }
     }
     
-    func requestWithParams(params: Dictionary<String, Any>?, path: String, requestType: ZYAPIManagerRequestType) -> URLRequest? {
+    func requestWithParams(params: Dictionary<String, Any>?, path: String, requestType: ZYAPIManagerRequestType) -> NSURLRequest? {
         if requestType == .get {
-            let urlString: String = baseURL + "/" + path
+            
             let tsString: String = UUID.init().uuidString
             let md5Hash: String = (tsString + privateKey + publicKey).ZY_MD5()
+            let urlString: String = baseURL + "/" + path + [
+                "apikey": publicKey,
+                "ts": tsString,
+                "hash": md5Hash,
+            ].zy_transformToUrlParamString()
+
         
-            let request: URLRequest? = Alamofire.request(urlString, method: .get,
-                                                                parameters: [
-                                                                 "apikey": publicKey,
-                                                                 "ts": tsString,
-                                                                 "hash": md5Hash,
-                                                                ],
+            let request: NSURLRequest? = Alamofire.request(urlString, method: .get,
+                                                                parameters: nil,
                                                                   encoding: JSONEncoding.default,
-                                                                   headers: headers).request
+                                                                   headers: headers).request as NSURLRequest?
 
             return request
         }
         return nil
     }
     
-    func resultWithResponseData(responsedata data: Data?, response: URLResponse?, request: URLRequest?, error: Error?) -> Dictionary<String, Any>? {
+    func resultWithResponseData(responsedata data: Data?, response: URLResponse?, request: NSURLRequest?, error: Error?) -> Dictionary<String, Any>? {
         
         var result: Dictionary<String, Any> = [String: Any]()
 

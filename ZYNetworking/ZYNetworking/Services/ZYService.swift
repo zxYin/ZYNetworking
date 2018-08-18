@@ -13,9 +13,9 @@ public protocol ZYServiceProtocol {
     
     var apiEnvironment: ZYServiceAPIEnvironment { get }
     
-    func requestWithParams(params: Dictionary<String, Any>?, path: String, requestType: ZYAPIManagerRequestType) -> URLRequest?
+    func requestWithParams(params: Dictionary<String, Any>?, path: String, requestType: ZYAPIManagerRequestType) -> NSURLRequest?
     
-    func resultWithResponseData(responsedata data: Data?, response: URLResponse?, request: URLRequest?, error: Error?) -> Dictionary<String, Any>?
+    func resultWithResponseData(responsedata data: Data?, response: URLResponse?, request: NSURLRequest?, error: Error?) -> Dictionary<String, Any>?
     
 }
 

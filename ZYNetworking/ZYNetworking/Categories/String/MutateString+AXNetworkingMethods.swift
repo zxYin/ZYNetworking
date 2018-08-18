@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     
-    public mutating func appendURLRequest(request: URLRequest) {
+    public mutating func appendNSURLRequest(request: NSURLRequest) {
         self += "\n\nHTTP URL:\n\t" + (request.url?.absoluteString ?? "\t\t\t\tN/A")
         self += "\n\nHTTP Header:\n" + (request.allHTTPHeaderFields?.zy_jsonString() ?? "\t\t\t\t\tN/A")
         self += "\n\nHTTP Origin Params:\n\t" + (request.originRequestParams?.zy_jsonString().zy_defaultValue(defaultData: "N/A") ?? "N/A")
